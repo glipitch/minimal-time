@@ -7,7 +7,9 @@ public class TimeJsonConverter : JsonConverter<Time>
 {
     public override Time Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        return Time.Parse(reader.GetString());
+        var content = reader.GetString();
+
+        return Time.Parse(content!);
     }
 
     public override void Write(Utf8JsonWriter writer, Time time, JsonSerializerOptions options)
