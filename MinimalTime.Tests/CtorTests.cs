@@ -14,7 +14,7 @@ public class CtorTests
     [MemberData(nameof(TestData.Data), MemberType = typeof(TestData))]
     public void Ctor_separate_ushorts(params ushort[] input)
     {
-        var t = Helpers.NewWithMulipleParametersFromArray(input);
+        var t = Helpers.NewWithMultipleParametersFromArray(input);
 
         t.VerifyDateTimeOffsetByArray(input);
     }

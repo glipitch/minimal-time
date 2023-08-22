@@ -6,7 +6,7 @@ namespace MinimalTime.Tests;
 
 public static class Helpers
 {
-    public static Time NewWithMulipleParametersFromArray(params ushort[] input) => input.Length switch
+    public static Time NewWithMultipleParametersFromArray(params ushort[] input) => input.Length switch
     {
         0 => new Time(),
         1 => new Time(year: input[0]),
@@ -16,7 +16,7 @@ public static class Helpers
         5 => new Time(year: input[0], input[1], input[2], input[3], input[4]),
         6 => new Time(year: input[0], input[1], input[2], input[3], input[4], input[5]),
         7 => new Time(year: input[0], input[1], input[2], input[3], input[4], input[5], input[6]),
-        _ => throw new ArgumentException("Too many paramters")
+        _ => throw new ArgumentException("Too many parameters")
     };
 
     public static void VerifyDateTimeOffset(this Time dateTimeOffset, int year, int month, int day, int hour, int minute, int second, int millisecond)
