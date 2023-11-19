@@ -14,7 +14,7 @@ public class JsonTests
 
     [Theory]
     [MemberData(nameof(TestData.Data), MemberType = typeof(TestData))]
-    public void RoundTrip(params ushort[] input)
+    public void RoundTrip(ushort[] input)
     {
         var originalTime = new Time(input);
         var originalObject = new SomeType { Name = "A Name", Time = originalTime };
