@@ -1,5 +1,4 @@
 ﻿namespace MinimalTime;
-
 internal class Minimum
 {
     internal const ushort Year = 1;
