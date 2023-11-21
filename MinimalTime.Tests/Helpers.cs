@@ -1,9 +1,7 @@
 ﻿using System;
 
 using Xunit;
-
 namespace MinimalTime.Tests;
-
 public static class Helpers
 {
     public static Time NewWithMultipleParametersFromArray(params ushort[] input) => input.Length switch
@@ -18,7 +16,6 @@ public static class Helpers
         7 => new Time(year: input[0], input[1], input[2], input[3], input[4], input[5], input[6]),
         _ => throw new ArgumentException("Too many parameters")
     };
-
     public static void VerifyDateTimeOffset(this Time dateTimeOffset, int year, int month, int day, int hour, int minute, int second, int millisecond)
     {
         Assert.Equal(year, dateTimeOffset.Year);
@@ -29,7 +26,6 @@ public static class Helpers
         Assert.Equal(second, dateTimeOffset.Second);
         Assert.Equal(millisecond, dateTimeOffset.Millisecond);
     }
-
     public static void VerifyDateTimeOffsetByArray(this Time dateTimeOffset, params ushort[] input)
     {
         if (input.Length == 0)
@@ -37,19 +33,16 @@ public static class Helpers
             throw new ApplicationException("Cannot test zero arguments");
         }
         Assert.Equal(input[0], dateTimeOffset.Year);
-
         if (input.Length == 1)
         {
             return;
         }
         Assert.Equal(input[1], dateTimeOffset.Month);
-
         if (input.Length == 2)
         {
             return;
         }
         Assert.Equal(input[2], dateTimeOffset.Day);
-
         if (input.Length == 3)
         {
             return;
