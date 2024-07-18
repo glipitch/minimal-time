@@ -11,11 +11,10 @@ public class CtorTests
     }
 
     [Theory]
-    [MemberData(nameof(TestData.Data), MemberType = typeof(TestData))]
+    [ClassData(typeof(TestData))]
     public void Ctor_separate_ushorts(ushort[] input)
     {
         var t = Helpers.NewWithMultipleParametersFromArray(input);
-
         t.VerifyDateTimeOffsetByArray(input);
     }
 }

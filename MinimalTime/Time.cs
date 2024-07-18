@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json.Serialization;
+
 namespace MinimalTime;
 [JsonConverter(typeof(TimeJsonConverter))]
 public readonly record struct Time : IComparable<Time>
@@ -48,7 +49,13 @@ public readonly record struct Time : IComparable<Time>
         }
         Millisecond = parts[6];
     }
-    public Time(ushort year = Minimum.Year, ushort month = Minimum.Month, ushort day = Minimum.Day, ushort hour = Minimum.Hour, ushort minute = Minimum.Minute, ushort second = Minimum.Second, ushort millisecond = Minimum.Millisecond)
+    public Time(ushort year = Minimum.Year,
+                ushort month = Minimum.Month,
+                ushort day = Minimum.Day,
+                ushort hour = Minimum.Hour,
+                ushort minute = Minimum.Minute,
+                ushort second = Minimum.Second,
+                ushort millisecond = Minimum.Millisecond)
     {
         Year = year;
         Month = month;
